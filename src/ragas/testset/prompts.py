@@ -2,7 +2,7 @@ from langchain.prompts import HumanMessagePromptTemplate
 
 SEED_QUESTION = HumanMessagePromptTemplate.from_template(
     """\
-Your task is to formulate a question from given context satisfying the rules given below:
+Answer in the same language as the provided context. Your task is to formulate a question from given context satisfying the rules given below:
     1.The question should make sense to humans even when read without the given context.
     2.The question should be fully answered from the given context.
     3.The question should be framed from a part of context that contains important information. It can also be from tables,code,etc.
