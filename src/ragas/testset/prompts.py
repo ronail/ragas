@@ -20,7 +20,7 @@ context:{context}
 
 REASONING_QUESTION = HumanMessagePromptTemplate.from_template(
     """\
-You are a prompt rewriter. You will be provided with a question and a long context.Your task to is to complicate the given question to improve the difficulty of answering. 
+Answer in the same language as the provided question. You are a prompt rewriter. You will be provided with a question and a long context.Your task to is to complicate the given question to improve the difficulty of answering. 
 You should do complicate the question by rewriting question into a multi-hop reasoning question based on the provided context. The question should require the reader to make multiple logical connections or inferences using the information available in given context. 
 Here are some strategies to create multi-hop questions:
 
@@ -48,7 +48,7 @@ Multi-hop Reasoning Question:
 
 MULTICONTEXT_QUESTION = HumanMessagePromptTemplate.from_template(
     """\
-You are a prompt rewriter. You will be provided with a question and two set of contexts namely context1 and context2. 
+Answer in the same language as the provided question. You are a prompt rewriter. You will be provided with a question and two set of contexts namely context1 and context2. 
 Your task is to complicate the given question in a way that answering it requires information derived from both context1 and context2. 
 Follow the rules given below while rewriting the question.
     1. The rewritten question should not be very long. Use abbreviation wherever possible.
@@ -66,7 +66,7 @@ context2:\n{context2}
 
 CONDITIONAL_QUESTION = HumanMessagePromptTemplate.from_template(
     """\
-Rewrite the provided question to increase its complexity by introducing a conditional element.
+Answer in the same language as the provided question. Rewrite the provided question to increase its complexity by introducing a conditional element.
 The goal is to make the question more intricate by incorporating a scenario or condition that affects the context of the question.
 Follow the rules given below while rewriting the question.
     1. The rewritten question should not be longer than 25 words. Use abbreviation wherever possible.
@@ -86,7 +86,7 @@ Rewritten Question
 
 COMPRESS_QUESTION = HumanMessagePromptTemplate.from_template(
     """\
-Rewrite the following question to make it more indirect and shorter while retaining the essence of the original question. The goal is to create a question that conveys the same meaning but in a less direct manner.
+Answer in the same language as the provided question. Rewrite the following question to make it more indirect and shorter while retaining the essence of the original question. The goal is to create a question that conveys the same meaning but in a less direct manner.
 The rewritten question should shorter so use abbreviation wherever possible.
 Original Question:
 {question}
@@ -98,7 +98,7 @@ Indirectly Rewritten Question:
 
 CONVERSATION_QUESTION = HumanMessagePromptTemplate.from_template(
     """\
-Reformat the provided question into two separate questions as if it were to be part of a conversation. Each question should focus on a specific aspect or subtopic related to the original question.
+Answer in the same language as the provided question. Reformat the provided question into two separate questions as if it were to be part of a conversation. Each question should focus on a specific aspect or subtopic related to the original question.
 question: What are the advantages and disadvantages of remote work?
 Reformatted Questions for Conversation: What are the benefits of remote work?\nOn the flip side, what challenges are encountered when working remotely?
 question:{question}
@@ -130,7 +130,7 @@ question:{question}
 
 ANSWER_FORMULATE = HumanMessagePromptTemplate.from_template(
     """\
-Answer the question using the information from the given context. 
+Answer in the same language as the provided question. Answer the question using the information from the given context. 
 question:{question}
 context:{context}
 answer:
